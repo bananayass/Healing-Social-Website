@@ -688,13 +688,31 @@
       </div>
       <!-- Emergency Support Button -->
       <div class="fixed bottom-6 right-6 z-50">
-        <button class="bg-red-500 hover:bg-red-600 text-white w-14 h-14 rounded-full shadow-lg flex items-center justify-center btn-scale">
+        <button onclick="openChatBox()" class="bg-red-500 hover:bg-red-600 text-white w-14 h-14 rounded-full shadow-lg flex items-center justify-center btn-scale">
           <div class="w-6 h-6 flex items-center justify-center icon-hover">
             <i class="ri-phone-line text-xl"></i>
           </div>
         </button>
       </div>
+      <!-- Chat Box Modal -->
+      <div id="chatBoxModal" class="fixed inset-0 bg-black/50 flex items-center justify-center z-[60] hidden p-4">
+        <div class="bg-white rounded-2xl w-full max-w-md h-[600px] max-h-[80vh] shadow-2xl overflow-hidden flex flex-col">
+          <iframe src="chatbox.html" class="w-full h-full flex-1" frameborder="0"></iframe>
+        </div>
+      </div>
     </div>
+    <script>
+      function openChatBox() {
+        document.getElementById('chatBoxModal').classList.remove('hidden');
+      }
+      function closeChatBox() {
+        document.getElementById('chatBoxModal').classList.add('hidden');
+      }
+      // Close on outside click
+      document.getElementById('chatBoxModal').addEventListener('click', function(e) {
+        if (e.target === this) closeChatBox();
+      });
+    </script>
     <script src="../js/main.js"></script>
    
   </body>
