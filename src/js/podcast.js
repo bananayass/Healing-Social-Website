@@ -8,8 +8,8 @@ document.addEventListener("DOMContentLoaded", function () {
             duration: "60 phút",
             category: "calming",
             moodTag: ["low", "medium", "high"],
-            embedUrl: "https://www.youtube.com/embed/jfKfPfyJRdk",
-            thumbnail: "https://img.youtube.com/vi/jfKfPfyJRdk/mqdefault.jpg",
+            embedUrl: "https://www.youtube.com/embed/9kzE8isXlQY?si=xHHu82cS1e4ra9hC",
+            thumbnail: "https://img.youtube.com/vi/9kzE8isXlQY/mqdefault.jpg",
             description: "Nhạc lo-fi chill để thư giãn, học tập hoặc làm việc"
         },
         {
