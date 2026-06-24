@@ -43,29 +43,118 @@
     </script>
 
     <style>
+      /* ============================================
+      // CHAT THEME SYSTEM - Applied only to chat area
+      // ============================================ */
+
+      /* Theme 1: Light (Default) */
+      .chat-theme-light {
+        --chat-bg: #f9fafb;
+        --chat-surface: #ffffff;
+        --chat-surface-alt: #f3f4f6;
+        --chat-text: #374151;
+        --chat-text-secondary: #6b7280;
+        --chat-text-muted: #9ca3af;
+        --chat-border: #e5e7eb;
+        --chat-primary: #6366f1;
+        --chat-sent-bg: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+        --chat-received-bg: #f3f4f6;
+      }
+
+      /* Theme 2: Dark */
+      .chat-theme-dark {
+        --chat-bg: #1a1a2e;
+        --chat-surface: #16213e;
+        --chat-surface-alt: #0f3460;
+        --chat-text: #eaeaea;
+        --chat-text-secondary: #b8b8b8;
+        --chat-text-muted: #7a7a8c;
+        --chat-border: #2a2a4a;
+        --chat-primary: #e94560;
+        --chat-sent-bg: linear-gradient(135deg, #e94560 0%, #ff6b6b 100%);
+        --chat-received-bg: #16213e;
+      }
+
+      /* Theme 3: Forest */
+      .chat-theme-forest {
+        --chat-bg: #1a2e1a;
+        --chat-surface: #243524;
+        --chat-surface-alt: #2d422d;
+        --chat-text: #e8f5e8;
+        --chat-text-secondary: #a8d5a8;
+        --chat-text-muted: #6b9b6b;
+        --chat-border: #3d5c3d;
+        --chat-primary: #4ade80;
+        --chat-sent-bg: linear-gradient(135deg, #22c55e 0%, #4ade80 100%);
+        --chat-received-bg: #2d422d;
+      }
+
+      /* Theme 4: Ocean */
+      .chat-theme-ocean {
+        --chat-bg: #0a1628;
+        --chat-surface: #132039;
+        --chat-surface-alt: #1a2942;
+        --chat-text: #e0f4ff;
+        --chat-text-secondary: #8bb8d0;
+        --chat-text-muted: #5a8aa8;
+        --chat-border: #1e3a5f;
+        --chat-primary: #38bdf8;
+        --chat-sent-bg: linear-gradient(135deg, #0ea5e9 0%, #38bdf8 100%);
+        --chat-received-bg: #132039;
+      }
+
+      /* Theme 5: Sunset */
+      .chat-theme-sunset {
+        --chat-bg: #2d1b3d;
+        --chat-surface: #3d2450;
+        --chat-surface-alt: #4d3060;
+        --chat-text: #fff5f5;
+        --chat-text-secondary: #e8c8c8;
+        --chat-text-muted: #b89898;
+        --chat-border: #5a3d70;
+        --chat-primary: #fb7185;
+        --chat-sent-bg: linear-gradient(135deg, #f43f5e 0%, #fb7185 100%);
+        --chat-received-bg: #3d2450;
+      }
+
+      /* Theme 6: Lavender */
+      .chat-theme-lavender {
+        --chat-bg: #f5f3ff;
+        --chat-surface: #ede9fe;
+        --chat-surface-alt: #ddd6fe;
+        --chat-text: #3f3f46;
+        --chat-text-secondary: #71717a;
+        --chat-text-muted: #a1a1aa;
+        --chat-border: #c4b5fd;
+        --chat-primary: #8b5cf6;
+        --chat-sent-bg: linear-gradient(135deg, #7c3aed 0%, #8b5cf6 100%);
+        --chat-received-bg: #ede9fe;
+      }
+
+      /* Theme 7: Mint */
+      .chat-theme-mint {
+        --chat-bg: #f0fdf4;
+        --chat-surface: #dcfce7;
+        --chat-surface-alt: #bbf7d0;
+        --chat-text: #14532d;
+        --chat-text-secondary: #166534;
+        --chat-text-muted: #22c55e;
+        --chat-border: #86efac;
+        --chat-primary: #10b981;
+        --chat-sent-bg: linear-gradient(135deg, #059669 0%, #10b981 100%);
+        --chat-received-bg: #dcfce7;
+      }
+
       body {
         font-family: "Nunito", sans-serif;
       }
 
-      .glass {
-        background: rgba(255, 255, 255, 0.85);
-        backdrop-filter: blur(12px);
-        border: 1px solid rgba(255, 255, 255, 0.3);
-      }
+      /* ============================================
+      // THEMEABLE CHAT COMPONENTS
+      // These use CSS variables from theme classes
+      // ============================================ */
 
-      .conversation-item {
-        transition: all 0.2s ease;
-      }
-
-      .conversation-item:hover {
-        background: rgba(99, 102, 241, 0.05);
-      }
-
-      .conversation-item.active {
-        background: rgba(99, 102, 241, 0.1);
-        border-left: 3px solid primary;
-      }
-
+      /* Message bubbles - uses --chat-* variables from parent theme class */
       .message-bubble {
         max-width: 70%;
         padding: 12px 16px;
@@ -74,17 +163,44 @@
       }
 
       .message-sent {
-        background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+        background: var(--chat-sent-bg);
         color: white;
         margin-left: auto;
         border-bottom-right-radius: 4px;
       }
 
       .message-received {
-        bg-gray-100;
+        background: var(--chat-received-bg);
+        color: var(--chat-text);
         border-bottom-left-radius: 4px;
       }
 
+      /* Messages area background */
+      .chat-messages-bg {
+        background: linear-gradient(to bottom, var(--chat-surface-alt), var(--chat-surface));
+      }
+
+      /* Theme dropdown inside header */
+      .theme-dropdown {
+        background-color: var(--chat-surface);
+        border-color: var(--chat-border);
+        z-index: 100;
+      }
+
+      .theme-option {
+        color: var(--chat-text);
+      }
+
+      .theme-option:hover {
+        background-color: var(--chat-surface-alt);
+      }
+
+      .theme-option.active {
+        background-color: var(--chat-primary);
+        color: white;
+      }
+
+      /* Scrollbar */
       .scrollbar-hide::-webkit-scrollbar {
         display: none;
       }
@@ -98,7 +214,7 @@
         display: inline-block;
         width: 8px;
         height: 8px;
-        background: #6366f1;
+        background: var(--chat-primary);
         border-radius: 50%;
         animation: typing 1.4s infinite ease-in-out both;
         margin: 0 2px;
@@ -119,6 +235,37 @@
         40% {
           transform: scale(1);
         }
+      }
+
+      /* Theme Selector */
+      .theme-btn {
+        background-color: rgba(255, 255, 255, 0.2);
+        color: white;
+        transition: all 0.2s ease;
+      }
+
+      .theme-btn:hover {
+        background-color: rgba(255, 255, 255, 0.3);
+      }
+
+      .theme-dropdown {
+        background-color: var(--chat-surface);
+        border-color: var(--chat-border);
+        box-shadow: 0 4px 20px var(--chat-shadow);
+      }
+
+      .theme-option {
+        color: var(--chat-text);
+        transition: background-color 0.2s ease;
+      }
+
+      .theme-option:hover {
+        background-color: var(--chat-surface-alt);
+      }
+
+      .theme-option.active {
+        background-color: var(--chat-primary);
+        color: white;
       }
     </style>
   </head>
@@ -305,48 +452,96 @@
           </div>
         </div>
 
-        <!-- Chat Area -->
-        <div class="flex-1 flex flex-col h-[calc(100vh-64px)]">
-          <!-- Chat Header -->
-          <div class="bg-white border-b border-gray-200 p-4 flex items-center justify-between">
+        <!-- Chat Area - Theme Wrapper -->
+        <div id="chatThemeWrapper" class="flex-1 flex flex-col h-[calc(100vh-64px)] chat-theme-light">
+          <!-- Chat Header (NOT themed - keeps Ngõ Nhỏ branding) -->
+          <div class="border-b p-4 flex items-center justify-between" style="background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);">
             <div class="flex items-center space-x-3">
               <div class="relative">
                 <img src="https://img.tripi.vn/cdn-cgi/image/width=700,height=700/https://gcs.tripi.vn/public-tripi/tripi-feed/img/474092CAT/anh-avatar-chill-lofi-dep_021444026.jpg" alt="Avatar" class="w-10 h-10 rounded-full object-cover" />
                 <span class="absolute bottom-0 right-0 w-3 h-3 bg-green-500 rounded-full border-2 border-white"></span>
               </div>
               <div>
-                <h2 class="font-extrabold text-gray-800">Lê Hoàng Minh</h2>
-                <p class="text-xs text-green-600 flex items-center">
-                  <span class="w-2 h-2 bg-green-500 rounded-full mr-1"></span>Đang hoạt động
+                <h2 class="font-extrabold text-white">Lê Hoàng Minh</h2>
+                <p class="text-xs text-white/80 flex items-center">
+                  <span class="w-2 h-2 bg-green-400 rounded-full mr-1"></span>Đang hoạt động
                 </p>
               </div>
             </div>
-            <div class="flex items-center space-x-2">
-              <button class="w-10 h-10 rounded-full hover:bg-gray-100 flex items-center justify-center text-gray-600">
+            <div class="flex items-center space-x-2 relative">
+              <!-- Theme Selector - Prominent Button -->
+              <button onclick="toggleThemeMenu()" id="themeBtn"
+                class="bg-white/20 text-white px-4 py-2 rounded-xl flex items-center space-x-2 hover:bg-white/30 transition-all border border-white/30">
+                <i class="ri-palette-line text-lg"></i>
+                <span class="text-sm font-medium">Giao diện</span>
+                <i class="ri-arrow-down-s-line text-sm"></i>
+              </button>
+              <!-- Dropdown Menu - Drops DOWN below button -->
+              <div id="themeMenu" class="hidden absolute top-full mt-2 left-0 w-56 rounded-xl overflow-hidden z-50 border shadow-lg" style="background: var(--chat-surface);">
+                <div class="p-3">
+                  <p class="text-xs font-semibold mb-3 px-2" style="color: var(--chat-text-secondary);">Chọn giao diện chat</p>
+                  <button onclick="setChatTheme('light')" class="theme-option w-full flex items-center px-3 py-2.5 rounded-lg text-left text-sm" data-theme="light">
+                    <i class="ri-sun-line mr-3 text-amber-500"></i>
+                    <span>Sáng</span>
+                    <i class="ri-check-line ml-auto check-icon"></i>
+                  </button>
+                  <button onclick="setChatTheme('dark')" class="theme-option w-full flex items-center px-3 py-2.5 rounded-lg text-left text-sm" data-theme="dark">
+                    <i class="ri-moon-line mr-3 text-indigo-400"></i>
+                    <span>Tối</span>
+                    <i class="ri-check-line ml-auto check-icon hidden"></i>
+                  </button>
+                  <button onclick="setChatTheme('forest')" class="theme-option w-full flex items-center px-3 py-2.5 rounded-lg text-left text-sm" data-theme="forest">
+                    <i class="ri-leaf-line mr-3 text-green-500"></i>
+                    <span>Rừng</span>
+                    <i class="ri-check-line ml-auto check-icon hidden"></i>
+                  </button>
+                  <button onclick="setChatTheme('ocean')" class="theme-option w-full flex items-center px-3 py-2.5 rounded-lg text-left text-sm" data-theme="ocean">
+                    <i class="ri-water-flash-line mr-3 text-cyan-400"></i>
+                    <span>Đại dương</span>
+                    <i class="ri-check-line ml-auto check-icon hidden"></i>
+                  </button>
+                  <button onclick="setChatTheme('sunset')" class="theme-option w-full flex items-center px-3 py-2.5 rounded-lg text-left text-sm" data-theme="sunset">
+                    <i class="ri-sunset-line mr-3 text-pink-400"></i>
+                    <span>Hoàng hôn</span>
+                    <i class="ri-check-line ml-auto check-icon hidden"></i>
+                  </button>
+                  <button onclick="setChatTheme('lavender')" class="theme-option w-full flex items-center px-3 py-2.5 rounded-lg text-left text-sm" data-theme="lavender">
+                    <i class="ri-flower-line mr-3 text-purple-400"></i>
+                    <span>Lavender</span>
+                    <i class="ri-check-line ml-auto check-icon hidden"></i>
+                  </button>
+                  <button onclick="setChatTheme('mint')" class="theme-option w-full flex items-center px-3 py-2.5 rounded-lg text-left text-sm" data-theme="mint">
+                    <i class="ri-leaf-line mr-3 text-emerald-400"></i>
+                    <span>Bạc hà</span>
+                    <i class="ri-check-line ml-auto check-icon hidden"></i>
+                  </button>
+                </div>
+              </div>
+              <button class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center text-white hover:bg-white/30 transition-all">
                 <i class="ri-phone-line text-xl"></i>
               </button>
-              <button class="w-10 h-10 rounded-full hover:bg-gray-100 flex items-center justify-center text-gray-600">
+              <button class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center text-white hover:bg-white/30 transition-all">
                 <i class="ri-video-chat-line text-xl"></i>
               </button>
-              <button class="w-10 h-10 rounded-full hover:bg-gray-100 flex items-center justify-center text-gray-600">
+              <button class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center text-white hover:bg-white/30 transition-all">
                 <i class="ri-more-fill"></i>
               </button>
             </div>
           </div>
 
-          <!-- Messages -->
-          <div class="flex-1 overflow-y-auto p-4 space-y-4 bg-gradient-to-b from-gray-50 to-white">
+          <!-- Messages (THEMED) -->
+          <div class="flex-1 overflow-y-auto p-4 space-y-4 chat-messages-bg">
             <!-- Time divider -->
             <div class="flex items-center justify-center">
-              <span class="text-xs text-gray-500 bg-gray-100 px-3 py-1 rounded-full">Hôm nay</span>
+              <span class="text-xs px-3 py-1 rounded-full" style="background-color: var(--chat-surface-alt); color: var(--chat-text-muted);">Hôm nay</span>
             </div>
 
             <!-- Received message -->
             <div class="flex items-end space-x-2">
               <img src="https://img.tripi.vn/cdn-cgi/image/width=700,height=700/https://gcs.tripi.vn/public-tripi/tripi-feed/img/474092CAT/anh-avatar-chill-lofi-dep_021444026.jpg" alt="Avatar" class="w-8 h-8 rounded-full object-cover" />
-              <div class="message-bubble bg-gray-100 text-gray-800">
+              <div class="message-bubble message-received">
                 <p class="text-sm">Chào bạn! Mình thấy bạn đăng bài về việc cảm thấy áp lực học tập. Bạn có muốn chia sẻ thêm không?</p>
-                <span class="text-xs text-gray-500 mt-1 block">10:30</span>
+                <span class="text-xs mt-1 block" style="color: var(--chat-text-muted);">10:30</span>
               </div>
             </div>
 
@@ -361,9 +556,9 @@
             <!-- Received message -->
             <div class="flex items-end space-x-2">
               <img src="https://img.tripi.vn/cdn-cgi/image/width=700,height=700/https://gcs.tripi.vn/public-tripi/tripi-feed/img/474092CAT/anh-avatar-chill-lofi-dep_021444026.jpg" alt="Avatar" class="w-8 h-8 rounded-full object-cover" />
-              <div class="message-bubble bg-gray-100 text-gray-800">
+              <div class="message-bubble message-received">
                 <p class="text-sm">Mình hiểu cảm giác đó. Kỳ thi thì ai cũng có áp lực, nhưng quan trọng là bạn đừng quá lo lắng. Bạn đã chuẩn bị như thế nào rồi?</p>
-                <span class="text-xs text-gray-500 mt-1 block">10:35</span>
+                <span class="text-xs mt-1 block" style="color: var(--chat-text-muted);">10:35</span>
               </div>
             </div>
 
@@ -378,7 +573,7 @@
             <!-- Typing indicator -->
             <div class="flex items-end space-x-2">
               <img src="https://img.tripi.vn/cdn-cgi/image/width=700,height=700/https://gcs.tripi.vn/public-tripi/tripi-feed/img/474092CAT/anh-avatar-chill-lofi-dep_021444026.jpg" alt="Avatar" class="w-8 h-8 rounded-full object-cover" />
-              <div class="message-bubble bg-gray-100">
+              <div class="message-bubble message-received">
                 <div class="typing-indicator">
                   <span></span>
                   <span></span>
@@ -388,17 +583,17 @@
             </div>
           </div>
 
-          <!-- Message Input -->
-          <div class="bg-white border-t border-gray-200 p-4">
+          <!-- Message Input (THEMED) -->
+          <div class="border-t p-4" style="background-color: var(--chat-surface); border-color: var(--chat-border);">
             <div class="flex items-center space-x-3">
-              <button class="w-10 h-10 rounded-full hover:bg-gray-100 flex items-center justify-center text-gray-600">
+              <button class="w-10 h-10 rounded-full flex items-center justify-center transition-all" style="background-color: var(--chat-surface-alt); color: var(--chat-text-secondary);">
                 <i class="ri-emotion-line text-xl"></i>
               </button>
-              <button class="w-10 h-10 rounded-full hover:bg-gray-100 flex items-center justify-center text-gray-600">
+              <button class="w-10 h-10 rounded-full flex items-center justify-center transition-all" style="background-color: var(--chat-surface-alt); color: var(--chat-text-secondary);">
                 <i class="ri-attachment-line text-xl"></i>
               </button>
-              <input type="text" placeholder="Nhập tin nhắn..." class="flex-1 px-4 py-3 bg-gray-100 rounded-full focus:outline-none focus:ring-2 focus:ring-primary" />
-              <button class="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center hover:bg-primary/90 transition-all">
+              <input type="text" placeholder="Nhập tin nhắn..." class="flex-1 px-4 py-3 rounded-full focus:outline-none" style="background-color: var(--chat-surface-alt); color: var(--chat-text); border: 1px solid var(--chat-border);" />
+              <button class="w-12 h-12 rounded-full flex items-center justify-center text-white transition-all" style="background: var(--chat-sent-bg);">
                 <i class="ri-send-plane-fill text-lg"></i>
               </button>
             </div>
@@ -476,5 +671,75 @@
         </button>
       </div>
     </div>
+
+    <script>
+      // ============================================
+      // CHAT THEME MANAGEMENT
+      // Only affects the chat area, NOT the header with Ngõ Nhỏ logo
+      // ============================================
+      const CHAT_THEME_KEY = 'ngo-nho-chat-theme';
+      const THEME_CLASS_PREFIX = 'chat-theme-';
+
+      function getStoredChatTheme() {
+        return localStorage.getItem(CHAT_THEME_KEY) || 'light';
+      }
+
+      function applyChatTheme(theme) {
+        const wrapper = document.getElementById('chatThemeWrapper');
+        if (!wrapper) return;
+
+        // Remove all theme classes
+        wrapper.classList.remove('chat-theme-light', 'chat-theme-dark', 'chat-theme-forest', 'chat-theme-ocean', 'chat-theme-sunset', 'chat-theme-lavender', 'chat-theme-mint');
+
+        // Add new theme class
+        wrapper.classList.add(THEME_CLASS_PREFIX + theme);
+
+        localStorage.setItem(CHAT_THEME_KEY, theme);
+        updateThemeMenuUI(theme);
+      }
+
+      function setChatTheme(theme) {
+        applyChatTheme(theme);
+        document.getElementById('themeMenu').classList.add('hidden');
+      }
+
+      function toggleThemeMenu() {
+        const menu = document.getElementById('themeMenu');
+        menu.classList.toggle('hidden');
+      }
+
+      function updateThemeMenuUI(activeTheme) {
+        const options = document.querySelectorAll('.theme-option');
+        options.forEach(opt => {
+          const isActive = opt.getAttribute('data-theme') === activeTheme;
+          opt.classList.toggle('active', isActive);
+          const checkIcon = opt.querySelector('.check-icon');
+          if (checkIcon) {
+            if (isActive) {
+              checkIcon.classList.remove('hidden');
+              checkIcon.classList.add('visible');
+            } else {
+              checkIcon.classList.add('hidden');
+              checkIcon.classList.remove('visible');
+            }
+          }
+        });
+      }
+
+      // Close theme menu when clicking outside
+      document.addEventListener('click', function (e) {
+        const themeBtn = document.getElementById('themeBtn');
+        const themeMenu = document.getElementById('themeMenu');
+        if (themeBtn && themeMenu && !themeMenu.contains(e.target) && !themeBtn.contains(e.target)) {
+          themeMenu.classList.add('hidden');
+        }
+      });
+
+      // Initialize theme on load
+      document.addEventListener('DOMContentLoaded', function () {
+        const savedTheme = getStoredChatTheme();
+        applyChatTheme(savedTheme);
+      });
+    </script>
   </body>
 </html>
