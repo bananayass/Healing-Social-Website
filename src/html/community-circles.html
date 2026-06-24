@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cộng đồng & Thành tựu - Ngõ Nhỏ</title>
+  <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: "#6366f1",
+            secondary: "#8b5cf6",
+            accent: "#f97316",
+            success: "#10b981",
+            warning: "#f59e0b",
+          },
+          borderRadius: {
+            'button': '8px',
+            'card': '16px',
+            'xl': '20px',
+          },
+          animation: {
+            'float': 'float 6s ease-in-out infinite',
+            'pulse-slow': 'pulse 3s ease-in-out infinite',
+            'bounce-subtle': 'bounceSubtle 2s ease-in-out infinite',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-10px)' },
+            },
+            bounceSubtle: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-5px)' },
+            },
+          },
+        },
+      },
+    };
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Pacifico&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/community-circles.css">
+</head>
+<body class="bg-gray-50">
+  <div class="min-h-screen flex flex-col">
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+      <div class="flex items-center justify-between px-4 py-2">
+        <div class="flex items-center">
+          <a href="main.html" class="text-2xl font-['Pacifico'] text-primary mr-8">Ngõ Nhỏ</a>
+          <div class="relative hidden md:block">
+            <input type="text" placeholder="Tìm kiếm..." class="pl-10 pr-4 py-2 bg-gray-100 rounded-full w-80 focus:outline-none focus:ring-2 focus:ring-primary text-sm">
+            <div class="absolute left-3 top-2.5 w-5 h-5 flex items-center justify-center text-gray-500 icon-hover">
+              <i class="ri-search-line"></i>
+            </div>
+          </div>
+        </div>
+        <div class="flex items-center space-x-3">
+          <a href="notifications.html" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center relative cursor-pointer icon-hover hover:bg-primary/10 hover:text-primary transition-all">
+            <i class="ri-notification-3-line text-gray-600"></i>
+            <span class="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">3</span>
+          </a>
+          <a href="dm.html" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center cursor-pointer icon-hover hover:bg-primary/10 hover:text-primary transition-all">
+            <i class="ri-message-3-line text-gray-600"></i>
+          </a>
+          <a href="settings.html" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center cursor-pointer icon-hover hover:bg-primary/10 hover:text-primary transition-all">
+            <i class="ri-settings-4-line text-gray-600"></i>
+          </a>
+          <div class="flex items-center cursor-pointer icon-hover">
+            <img src="https://img.tripi.vn/cdn-cgi/image/width=700,height=700/https://gcs.tripi.vn/public-tripi/tripi-feed/img/474092CAT/anh-avatar-chill-lofi-dep_021444026.jpg" alt="Avatar" class="w-10 h-10 rounded-full object-cover">
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content with Sidebar -->
+    <div class="flex-1 flex">
+      <!-- Left Sidebar -->
+      <div class="w-64 bg-white shadow-sm p-4 hidden lg:block h-[calc(100vh-64px)] sticky top-16 overflow-y-auto scrollbar-hide">
+        <nav class="space-y-1">
+          <a href="main.html" class="flex items-center space-x-3 px-3 py-2.5 rounded-lg text-gray-700 hover:bg-gray-100 card-hover">
+            <div class="w-6 h-6 flex items-center justify-center icon-hover"><i class="ri-home-5-line"></i></div>
+            <span>Trang chủ</span>
+          </a>
+          <a href="messages.html" class="flex items-center space-x-3 px-3 py-2.5 rounded-lg text-gray-700 hover:bg-gray-100 card-hover">
+            <div class="w-6 h-6 flex items-center justify-center icon-hover"><i class="ri-mail-lock-line"></i></div>
+            <span>Tâm sự ẩn danh</span>
+          </a>
+          <a href="chatroom.html" class="flex items-center space-x-3 px-3 py-2.5 rounded-lg text-gray-700 hover:bg-gray-100 card-hover">
+            <div class="w-6 h-6 flex items-center justify-center icon-hover"><i class="ri-chat-3-line"></i></div>
+            <span>Phòng trò chuyện</span>
+          </a>
+          <a href="mTrack.html" class="flex items-center space-x-3 px-3 py-2.5 rounded-lg text-gray-700 hover:bg-gray-100 card-hover">
+            <div class="w-6 h-6 flex items-center justify-center icon-hover"><i class="ri-emotion-line"></i></div>
+            <span>Mood Tracker</span>
+          </a>
+          <a href="podcast.html" class="flex items-center space-x-3 px-3 py-2.5 rounded-lg text-gray-700 hover:bg-gray-100 card-hover">
+            <div class="w-6 h-6 flex items-center justify-center icon-hover"><i class="ri-headphone-line"></i></div>
+            <span>Podcast</span>
+          </a>
+          <a href="khoND.html" class="flex items-center space-x-3 px-3 py-2.5 rounded-lg text-gray-700 hover:bg-gray-100 card-hover">
+            <div class="w-6 h-6 flex items-center justify-center icon-hover"><i class="ri-book-open-line"></i></div>
+            <span>Kho nội dung</span>
+          </a>
+          <a href="challenges.html" class="flex items-center space-x-3 px-3 py-2.5 rounded-lg text-gray-700 hover:bg-gray-100 card-hover">
+            <div class="w-6 h-6 flex items-center justify-center icon-hover"><i class="ri-trophy-line"></i></div>
+            <span>Thử thách</span>
+          </a>
+          <a href="futureme.html" class="flex items-center space-x-3 px-3 py-2.5 rounded-lg text-gray-700 hover:bg-gray-100 card-hover">
+            <div class="w-6 h-6 flex items-center justify-center icon-hover"><i class="ri-mail-line"></i></div>
+            <span>Hộp thư lắng nghe</span>
+          </a>
+          <a href="wishtree.html" class="flex items-center space-x-3 px-3 py-2.5 rounded-lg text-gray-700 hover:bg-gray-100 card-hover">
+            <div class="w-6 h-6 flex items-center justify-center icon-hover"><i class="ri-plant-line"></i></div>
+            <span>Cây điều ước</span>
+          </a>
+          <!-- Active Page -->
+          <a href="community-circles.html" class="flex items-center space-x-3 px-3 py-2.5 rounded-lg bg-primary/10 text-primary font-medium card-hover">
+            <div class="w-6 h-6 flex items-center justify-center icon-hover"><i class="ri-group-line"></i></div>
+            <span>Cộng đồng</span>
+          </a>
+        </nav>
+          <div class="mt-8">
+            <h3 class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3 px-3">Phòng chat phổ biến</h3>
+            <div class="space-y-1">
+              <a href="#" class="flex items-center space-x-3 px-3 py-2 rounded-lg hover:bg-white/80 card-hover">
+                <span class="w-2 h-2 bg-green-500 rounded-full"></span>
+                <span>Trầm cảm</span>
+                <span class="ml-auto text-xs text-gray-500">24</span>
+              </a>
+              <a href="#" class="flex items-center space-x-3 px-3 py-2.5 rounded-lg hover:bg-white/80 card-hover">
+                <span class="w-2 h-2 bg-green-500 rounded-full"></span>
+                <span>Áp lực học tập</span>
+                <span class="ml-auto text-xs text-gray-500">18</span>
+              </a>
+              <a href="#" class="flex items-center space-x-3 px-3 py-2.5 rounded-lg hover:bg-white/80 card-hover">
+                <span class="w-2 h-2 bg-green-500 rounded-full"></span>
+                <span>Mất ngủ</span>
+                <span class="ml-auto text-xs text-gray-500">9</span>
+              </a>
+            </div>
+          </div>
+      </div>
+
+      <!-- Page Content -->
+      <main class="flex-1 px-4 py-6 lg:ml-0">
+      <!-- Page Title & Actions -->
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-8 gap-4">
+        <div>
+          <h1 class="text-2xl md:text-3xl font-bold text-gray-900">Cộng đồng & Thành tựu</h1>
+          <p class="text-gray-500 mt-1">Khám phá circles, theo dõi thành tựu và tham gia thử thách cùng cộng đồng</p>
+        </div>
+        <button onclick="openCreateCircleModal()" class="bg-gradient-to-r from-primary to-secondary text-white px-6 py-3 rounded-xl font-semibold flex items-center justify-center gap-2 btn-scale shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/40 transition-all">
+          <i class="ri-add-circle-line text-xl"></i>
+          <span>Tạo Circle mới</span>
+        </button>
+      </div>
+
+      <!-- Stats Overview -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+        <div class="bg-white rounded-2xl shadow-sm p-4 text-center card-hover">
+          <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-2">
+            <i class="ri-vip-diamond-fill text-xl text-primary"></i>
+          </div>
+          <p class="text-2xl font-bold text-gray-900">12</p>
+          <p class="text-xs text-gray-500">Huy hiệu đã đạt</p>
+        </div>
+        <div class="bg-white rounded-2xl shadow-sm p-4 text-center card-hover">
+          <div class="w-12 h-12 rounded-xl bg-warning/10 flex items-center justify-center mx-auto mb-2">
+            <i class="ri-trophy-fill text-xl text-warning"></i>
+          </div>
+          <p class="text-2xl font-bold text-gray-900">3</p>
+          <p class="text-xs text-gray-500">Thử thách hoàn thành</p>
+        </div>
+        <div class="bg-white rounded-2xl shadow-sm p-4 text-center card-hover">
+          <div class="w-12 h-12 rounded-xl bg-success/10 flex items-center justify-center mx-auto mb-2">
+            <i class="ri-group-fill text-xl text-success"></i>
+          </div>
+          <p class="text-2xl font-bold text-gray-900">5</p>
+          <p class="text-xs text-gray-500">Circles tham gia</p>
+        </div>
+        <div class="bg-white rounded-2xl shadow-sm p-4 text-center card-hover">
+          <div class="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center mx-auto mb-2">
+            <i class="ri-flashlight-fill text-xl text-secondary"></i>
+          </div>
+          <p class="text-2xl font-bold text-gray-900">1,250</p>
+          <p class="text-xs text-gray-500">Điểm tích lũy</p>
+        </div>
+      </div>
+
+      <!-- Category Filters -->
+      <div class="flex flex-wrap gap-3 mb-8">
+        <button class="category-filter active px-4 py-2 rounded-full bg-primary text-white font-medium text-sm transition-all" data-category="all">
+          <i class="ri-earth-line mr-1"></i>Tất cả
+        </button>
+        <button class="category-filter px-4 py-2 rounded-full bg-white text-gray-600 font-medium text-sm hover:bg-primary/10 hover:text-primary transition-all border border-gray-200" data-category="mental-health">
+          <i class="ri-heart-pulse-line mr-1"></i>Sức khỏe tâm thần
+        </button>
+        <button class="category-filter px-4 py-2 rounded-full bg-white text-gray-600 font-medium text-sm hover:bg-primary/10 hover:text-primary transition-all border border-gray-200" data-category="learning">
+          <i class="ri-book-open-line mr-1"></i>Học tập
+        </button>
+        <button class="category-filter px-4 py-2 rounded-full bg-white text-gray-600 font-medium text-sm hover:bg-primary/10 hover:text-primary transition-all border border-gray-200" data-category="creative">
+          <i class="ri-palette-line mr-1"></i>Sáng tạo
+        </button>
+        <button class="category-filter px-4 py-2 rounded-full bg-white text-gray-600 font-medium text-sm hover:bg-primary/10 hover:text-primary transition-all border border-gray-200" data-category="fitness">
+          <i class="ri-run-line mr-1"></i>Thể chất
+        </button>
+        <button class="category-filter px-4 py-2 rounded-full bg-white text-gray-600 font-medium text-sm hover:bg-primary/10 hover:text-primary transition-all border border-gray-200" data-category="social">
+          <i class="ri-group-line mr-1"></i>Xã hội
+        </button>
+      </div>
+
+      <!-- My Circles Section -->
+      <section class="mb-10">
+        <div class="flex items-center justify-between mb-4">
+          <h2 class="text-xl font-bold text-gray-900 font-['Nunito'] flex items-center gap-2">
+            <i class="ri-star-fill text-warning"></i>
+            Circles của bạn
+          </h2>
+          <span class="text-sm text-primary font-medium cursor-pointer hover:underline">Xem tất cả</span>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <!-- My Circle Card 1 -->
+          <div class="bg-white rounded-2xl shadow-sm p-5 card-hover border-2 border-primary/20 hover:border-primary/40 transition-all">
+            <div class="flex items-start justify-between mb-4">
+              <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-pink-400 to-rose-500 flex items-center justify-center shadow-lg shadow-rose-200">
+                <i class="ri-emotion-happy-line text-2xl text-white"></i>
+              </div>
+              <span class="px-3 py-1 bg-success/10 text-success text-xs font-semibold rounded-full">Đang hoạt động</span>
+            </div>
+            <h3 class="font-bold text-lg text-gray-900 mb-1">Yêu bản thân</h3>
+            <p class="text-gray-500 text-sm mb-4">Hành trình tự chữa lành mỗi ngày</p>
+            <div class="flex items-center justify-between">
+              <div class="flex items-center -space-x-2">
+                <img src="https://i.pravatar.cc/150?img=32" class="w-8 h-8 rounded-full border-2 border-white" alt="">
+                <img src="https://i.pravatar.cc/150?img=47" class="w-8 h-8 rounded-full border-2 border-white" alt="">
+                <img src="https://i.pravatar.cc/150?img=51" class="w-8 h-8 rounded-full border-2 border-white" alt="">
+                <div class="w-8 h-8 rounded-full border-2 border-white bg-primary/10 flex items-center justify-center text-xs font-bold text-primary">+42</div>
+              </div>
+              <span class="text-xs text-gray-500"><i class="ri-time-line mr-1"></i>Hoạt động 2h trước</span>
+            </div>
+            <div class="mt-4 pt-4 border-t border-gray-100">
+              <div class="flex items-center justify-between text-sm">
+                <span class="text-gray-600"><i class="ri-chat-3-line mr-1 text-primary"></i>156 bài viết</span>
+                <span class="text-gray-600"><i class="ri-trophy-line mr-1 text-warning"></i>3 thử thách</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- My Circle Card 2 -->
+          <div class="bg-white rounded-2xl shadow-sm p-5 card-hover border-2 border-primary/20 hover:border-primary/40 transition-all">
+            <div class="flex items-start justify-between mb-4">
+              <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-400 to-indigo-500 flex items-center justify-center shadow-lg shadow-blue-200">
+                <i class="ri-book-read-line text-2xl text-white"></i>
+              </div>
+              <span class="px-3 py-1 bg-success/10 text-success text-xs font-semibold rounded-full">Đang hoạt động</span>
+            </div>
+            <h3 class="font-bold text-lg text-gray-900 mb-1">Sách tâm lý</h3>
+            <p class="text-gray-500 text-sm mb-4">Chia sẻ và thảo luận về sách tâm lý</p>
+            <div class="flex items-center justify-between">
+              <div class="flex items-center -space-x-2">
+                <img src="https://i.pravatar.cc/150?img=53" class="w-8 h-8 rounded-full border-2 border-white" alt="">
+                <img src="https://i.pravatar.cc/150?img=56" class="w-8 h-8 rounded-full border-2 border-white" alt="">
+                <div class="w-8 h-8 rounded-full border-2 border-white bg-primary/10 flex items-center justify-center text-xs font-bold text-primary">+28</div>
+              </div>
+              <span class="text-xs text-gray-500"><i class="ri-time-line mr-1"></i>Hoạt động 5h trước</span>
+            </div>
+            <div class="mt-4 pt-4 border-t border-gray-100">
+              <div class="flex items-center justify-between text-sm">
+                <span class="text-gray-600"><i class="ri-chat-3-line mr-1 text-primary"></i>89 bài viết</span>
+                <span class="text-gray-600"><i class="ri-trophy-line mr-1 text-warning"></i>2 thử thách</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- My Circle Card 3 -->
+          <div class="bg-white rounded-2xl shadow-sm p-5 card-hover border-2 border-primary/20 hover:border-primary/40 transition-all">
+            <div class="flex items-start justify-between mb-4">
+              <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-green-400 to-emerald-500 flex items-center justify-center shadow-lg shadow-green-200">
+                <i class="ri-plant-line text-2xl text-white"></i>
+              </div>
+              <span class="px-3 py-1 bg-gray-100 text-gray-500 text-xs font-semibold rounded-full">Ít hoạt động</span>
+            </div>
+            <h3 class="font-bold text-lg text-gray-900 mb-1">Thiền định</h3>
+            <p class="text-gray-500 text-sm mb-4">Practicing mindfulness and meditation together</p>
+            <div class="flex items-center justify-between">
+              <div class="flex items-center -space-x-2">
+                <img src="https://i.pravatar.cc/150?img=47" class="w-8 h-8 rounded-full border-2 border-white" alt="">
+                <img src="https://i.pravatar.cc/150?img=47" class="w-8 h-8 rounded-full border-2 border-white" alt="">
+                <div class="w-8 h-8 rounded-full border-2 border-white bg-primary/10 flex items-center justify-center text-xs font-bold text-primary">+15</div>
+              </div>
+              <span class="text-xs text-gray-500"><i class="ri-time-line mr-1"></i>Hoạt động 1 ngày trước</span>
+            </div>
+            <div class="mt-4 pt-4 border-t border-gray-100">
+              <div class="flex items-center justify-between text-sm">
+                <span class="text-gray-600"><i class="ri-chat-3-line mr-1 text-primary"></i>34 bài viết</span>
+                <span class="text-gray-600"><i class="ri-trophy-line mr-1 text-warning"></i>1 thử thách</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Popular Circles -->
+      <section class="mb-10">
+        <div class="flex items-center justify-between mb-4">
+          <h2 class="text-xl font-bold text-gray-900 font-['Nunito'] flex items-center gap-2">
+            <i class="ri-fire-fill text-accent"></i>
+            Circles phổ biến
+          </h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <!-- Popular Circle 1 -->
+          <div class="bg-white rounded-2xl shadow-sm overflow-hidden card-hover group">
+            <div class="h-32 bg-gradient-to-br from-violet-500 to-purple-600 relative">
+              <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all"></div>
+              <div class="absolute -bottom-6 left-5">
+                <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-violet-500 to-purple-600 flex items-center justify-center shadow-xl border-4 border-white">
+                  <i class="ri-discuss-line text-2xl text-white"></i>
+                </div>
+              </div>
+            </div>
+            <div class="p-5 pt-8">
+              <div class="flex items-start justify-between mb-2">
+                <h3 class="font-bold text-lg text-gray-900">Giải tỏa căng thẳng</h3>
+                <span class="flex items-center gap-1 text-xs text-warning">
+                  <i class="ri-star-fill"></i>4.9
+                </span>
+              </div>
+              <p class="text-gray-500 text-sm mb-4">Nơi chia sẻ những lo âu và tìm cách vượt qua</p>
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-4 text-sm text-gray-500">
+                  <span><i class="ri-user-line mr-1"></i>1.2k thành viên</span>
+                  <span><i class="ri-chat-3-line mr-1"></i>5.6k bài viết</span>
+                </div>
+              </div>
+              <button class="w-full mt-4 bg-primary/10 text-primary font-semibold py-2.5 rounded-xl hover:bg-primary hover:text-white transition-all btn-scale">
+                Tham gia ngay
+              </button>
+            </div>
+          </div>
+
+          <!-- Popular Circle 2 -->
+          <div class="bg-white rounded-2xl shadow-sm overflow-hidden card-hover group">
+            <div class="h-32 bg-gradient-to-br from-amber-500 to-orange-500 relative">
+              <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all"></div>
+              <div class="absolute -bottom-6 left-5">
+                <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-amber-500 to-orange-500 flex items-center justify-center shadow-xl border-4 border-white">
+                  <i class="ri-bear-smile-line text-2xl text-white"></i>
+                </div>
+              </div>
+            </div>
+            <div class="p-5 pt-8">
+              <div class="flex items-start justify-between mb-2">
+                <h3 class="font-bold text-lg text-gray-900">Học cách nói "Không"</h3>
+                <span class="flex items-center gap-1 text-xs text-warning">
+                  <i class="ri-star-fill"></i>4.8
+                </span>
+              </div>
+              <p class="text-gray-500 text-sm mb-4">Rèn luyện kỹ năng đặt ranh giới cá nhân</p>
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-4 text-sm text-gray-500">
+                  <span><i class="ri-user-line mr-1"></i>856 thành viên</span>
+                  <span><i class="ri-chat-3-line mr-1"></i>2.3k bài viết</span>
+                </div>
+              </div>
+              <button class="w-full mt-4 bg-primary/10 text-primary font-semibold py-2.5 rounded-xl hover:bg-primary hover:text-white transition-all btn-scale">
+                Tham gia ngay
+              </button>
+            </div>
+          </div>
+
+          <!-- Popular Circle 3 -->
+          <div class="bg-white rounded-2xl shadow-sm overflow-hidden card-hover group">
+            <div class="h-32 bg-gradient-to-br from-cyan-500 to-blue-500 relative">
+              <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all"></div>
+              <div class="absolute -bottom-6 left-5">
+                <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-cyan-500 to-blue-500 flex items-center justify-center shadow-xl border-4 border-white">
+                  <i class="ri-sun-line text-2xl text-white"></i>
+                </div>
+              </div>
+            </div>
+            <div class="p-5 pt-8">
+              <div class="flex items-start justify-between mb-2">
+                <h3 class="font-bold text-lg text-gray-900">Thói quen buổi sáng</h3>
+                <span class="flex items-center gap-1 text-xs text-warning">
+                  <i class="ri-star-fill"></i>4.7
+                </span>
+              </div>
+              <p class="text-gray-500 text-sm mb-4">Xây dựng routine lành mạnh mỗi ngày</p>
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-4 text-sm text-gray-500">
+                  <span><i class="ri-user-line mr-1"></i>2.1k thành viên</span>
+                  <span><i class="ri-chat-3-line mr-1"></i>8.9k bài viết</span>
+                </div>
+              </div>
+              <button class="w-full mt-4 bg-primary/10 text-primary font-semibold py-2.5 rounded-xl hover:bg-primary hover:text-white transition-all btn-scale">
+                Tham gia ngay
+              </button>
+            </div>
+          </div>
+
+          <!-- Popular Circle 4 -->
+          <div class="bg-white rounded-2xl shadow-sm overflow-hidden card-hover group">
+            <div class="h-32 bg-gradient-to-br from-pink-500 to-rose-500 relative">
+              <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all"></div>
+              <div class="absolute -bottom-6 left-5">
+                <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-pink-500 to-rose-500 flex items-center justify-center shadow-xl border-4 border-white">
+                  <i class="ri-heart-line text-2xl text-white"></i>
+                </div>
+              </div>
+            </div>
+            <div class="p-5 pt-8">
+              <div class="flex items-start justify-between mb-2">
+                <h3 class="font-bold text-lg text-gray-900">Tình yêu bản thân</h3>
+                <span class="flex items-center gap-1 text-xs text-warning">
+                  <i class="ri-star-fill"></i>4.9
+                </span>
+              </div>
+              <p class="text-gray-500 text-sm mb-4">Học cách yêu thương chính mình trước</p>
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-4 text-sm text-gray-500">
+                  <span><i class="ri-user-line mr-1"></i>3.4k thành viên</span>
+                  <span><i class="ri-chat-3-line mr-1"></i>12k bài viết</span>
+                </div>
+              </div>
+              <button class="w-full mt-4 bg-primary/10 text-primary font-semibold py-2.5 rounded-xl hover:bg-primary hover:text-white transition-all btn-scale">
+                Tham gia ngay
+              </button>
+            </div>
+          </div>
+
+          <!-- Popular Circle 5 -->
+          <div class="bg-white rounded-2xl shadow-sm overflow-hidden card-hover group">
+            <div class="h-32 bg-gradient-to-br from-emerald-500 to-green-500 relative">
+              <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all"></div>
+              <div class="absolute -bottom-6 left-5">
+                <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-emerald-500 to-green-500 flex items-center justify-center shadow-xl border-4 border-white">
+                  <i class="ri-leaf-line text-2xl text-white"></i>
+                </div>
+              </div>
+            </div>
+            <div class="p-5 pt-8">
+              <div class="flex items-start justify-between mb-2">
+                <h3 class="font-bold text-lg text-gray-900">Sống chậm</h3>
+                <span class="flex items-center gap-1 text-xs text-warning">
+                  <i class="ri-star-fill"></i>4.6
+                </span>
+              </div>
+              <p class="text-gray-500 text-sm mb-4">Chia sẻ cách sống chậm lại trong thế giới hối hả</p>
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-4 text-sm text-gray-500">
+                  <span><i class="ri-user-line mr-1"></i>678 thành viên</span>
+                  <span><i class="ri-chat-3-line mr-1"></i>1.8k bài viết</span>
+                </div>
+              </div>
+              <button class="w-full mt-4 bg-primary/10 text-primary font-semibold py-2.5 rounded-xl hover:bg-primary hover:text-white transition-all btn-scale">
+                Tham gia ngay
+              </button>
+            </div>
+          </div>
+
+          <!-- Popular Circle 6 -->
+          <div class="bg-white rounded-2xl shadow-sm overflow-hidden card-hover group">
+            <div class="h-32 bg-gradient-to-br from-indigo-500 to-violet-500 relative">
+              <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all"></div>
+              <div class="absolute -bottom-6 left-5">
+                <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-indigo-500 to-violet-500 flex items-center justify-center shadow-xl border-4 border-white">
+                  <i class="ri-brain-line text-2xl text-white"></i>
+                </div>
+              </div>
+            </div>
+            <div class="p-5 pt-8">
+              <div class="flex items-start justify-between mb-2">
+                <h3 class="font-bold text-lg text-gray-900">Chữa lành từ bên trong</h3>
+                <span class="flex items-center gap-1 text-xs text-warning">
+                  <i class="ri-star-fill"></i>4.8
+                </span>
+              </div>
+              <p class="text-gray-500 text-sm mb-4">Hành trình chữa lành từ những tổn thương</p>
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-4 text-sm text-gray-500">
+                  <span><i class="ri-user-line mr-1"></i>1.8k thành viên</span>
+                  <span><i class="ri-chat-3-line mr-1"></i>6.2k bài viết</span>
+                </div>
+              </div>
+              <button class="w-full mt-4 bg-primary/10 text-primary font-semibold py-2.5 rounded-xl hover:bg-primary hover:text-white transition-all btn-scale">
+                Tham gia ngay
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Mini Challenges Section -->
+      <section class="mb-10">
+        <div class="flex items-center justify-between mb-4">
+          <h2 class="text-xl font-bold text-gray-900 font-['Nunito'] flex items-center gap-2">
+            <i class="ri-trophy-fill text-warning"></i>
+            Thử thách Circle
+          </h2>
+          <span class="text-sm text-primary font-medium cursor-pointer hover:underline">Xem tất cả</span>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <!-- Challenge Card 1 -->
+          <div class="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-5 border border-amber-200 card-hover">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-400 to-orange-500 flex items-center justify-center shadow-lg shadow-amber-200">
+                <i class="ri-flashlight-line text-xl text-white"></i>
+              </div>
+              <div class="flex-1">
+                <h3 class="font-bold text-gray-900 mb-1">7 ngày gratitude journal</h3>
+                <p class="text-sm text-gray-600 mb-3">Viết 3 điều biết ơn mỗi ngày</p>
+                <div class="flex items-center gap-2 mb-3">
+                  <img src="https://i.pravatar.cc/150?img=51" class="w-6 h-6 rounded-full border-2 border-white" alt="">
+                  <img src="https://i.pravatar.cc/150?img=53" class="w-6 h-6 rounded-full border-2 border-white -ml-2" alt="">
+                  <img src="https://i.pravatar.cc/150?img=51" class="w-6 h-6 rounded-full border-2 border-white -ml-2" alt="">
+                  <span class="text-xs text-gray-500 ml-1">+234 tham gia</span>
+                </div>
+                <div class="w-full bg-white rounded-full h-2 overflow-hidden">
+                  <div class="bg-gradient-to-r from-amber-400 to-orange-500 h-full rounded-full" style="width: 65%"></div>
+                </div>
+                <p class="text-xs text-gray-500 mt-2">Còn 3 ngày để hoàn thành</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Challenge Card 2 -->
+          <div class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-5 border border-blue-200 card-hover">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-400 to-indigo-500 flex items-center justify-center shadow-lg shadow-blue-200">
+                <i class="ri-meditation-line text-xl text-white"></i>
+              </div>
+              <div class="flex-1">
+                <h3 class="font-bold text-gray-900 mb-1">30 ngày thiền định</h3>
+                <p class="text-sm text-gray-600 mb-3">Thiền 10 phút mỗi ngày</p>
+                <div class="flex items-center gap-2 mb-3">
+                  <img src="https://i.pravatar.cc/150?img=53" class="w-6 h-6 rounded-full border-2 border-white" alt="">
+                  <img src="https://i.pravatar.cc/150?img=56" class="w-6 h-6 rounded-full border-2 border-white -ml-2" alt="">
+                  <span class="text-xs text-gray-500 ml-1">+189 tham gia</span>
+                </div>
+                <div class="w-full bg-white rounded-full h-2 overflow-hidden">
+                  <div class="bg-gradient-to-r from-blue-400 to-indigo-500 h-full rounded-full" style="width: 40%"></div>
+                </div>
+                <p class="text-xs text-gray-500 mt-2">Còn 18 ngày để hoàn thành</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Challenge Card 3 -->
+          <div class="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-5 border border-green-200 card-hover">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-green-400 to-emerald-500 flex items-center justify-center shadow-lg shadow-green-200">
+                <i class="ri-run-line text-xl text-white"></i>
+              </div>
+              <div class="flex-1">
+                <h3 class="font-bold text-gray-900 mb-1">21 ngày thể dục</h3>
+                <p class="text-sm text-gray-600 mb-3">Tập thể dục 30 phút mỗi ngày</p>
+                <div class="flex items-center gap-2 mb-3">
+                  <img src="https://i.pravatar.cc/150?img=32" class="w-6 h-6 rounded-full border-2 border-white" alt="">
+                  <img src="https://i.pravatar.cc/150?img=47" class="w-6 h-6 rounded-full border-2 border-white -ml-2" alt="">
+                  <span class="text-xs text-gray-500 ml-1">+412 tham gia</span>
+                </div>
+                <div class="w-full bg-white rounded-full h-2 overflow-hidden">
+                  <div class="bg-gradient-to-r from-green-400 to-emerald-500 h-full rounded-full" style="width: 80%"></div>
+                </div>
+                <p class="text-xs text-gray-500 mt-2">Còn 4 ngày để hoàn thành</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Active Members -->
+      <section>
+        <div class="flex items-center justify-between mb-4">
+          <h2 class="text-xl font-bold text-gray-900 font-['Nunito'] flex items-center gap-2">
+            <i class="ri-user-star-fill text-primary"></i>
+            Thành viên nổi bật
+          </h2>
+        </div>
+        <div class="bg-white rounded-2xl shadow-sm p-5">
+          <div class="flex flex-wrap gap-4">
+            <!-- Member 1 -->
+            <div class="flex items-center gap-3 p-3 rounded-xl hover:bg-gray-50 transition-all cursor-pointer group">
+              <div class="relative">
+                <img src="https://i.pravatar.cc/150?img=51" class="w-12 h-12 rounded-full object-cover" alt="">
+                <div class="absolute -bottom-1 -right-1 w-5 h-5 bg-success rounded-full border-2 border-white flex items-center justify-center">
+                  <i class="ri-check-line text-white text-xs"></i>
+                </div>
+              </div>
+              <div>
+                <p class="font-semibold text-gray-900 group-hover:text-primary transition-colors">Nguyễn Thu Hà</p>
+                <p class="text-xs text-gray-500">Yêu bản thân • 1.2k điểm</p>
+              </div>
+              <div class="ml-2 flex items-center gap-1 bg-warning/10 px-2 py-1 rounded-full">
+                <i class="ri-vip-diamond-fill text-warning text-xs"></i>
+                <span class="text-xs font-bold text-warning">Top</span>
+              </div>
+            </div>
+
+            <!-- Member 2 -->
+            <div class="flex items-center gap-3 p-3 rounded-xl hover:bg-gray-50 transition-all cursor-pointer group">
+              <div class="relative">
+                <img src="https://i.pravatar.cc/150?img=53" class="w-12 h-12 rounded-full object-cover" alt="">
+                <div class="absolute -bottom-1 -right-1 w-5 h-5 bg-success rounded-full border-2 border-white flex items-center justify-center">
+                  <i class="ri-check-line text-white text-xs"></i>
+                </div>
+              </div>
+              <div>
+                <p class="font-semibold text-gray-900 group-hover:text-primary transition-colors">Trần Minh Tuấn</p>
+                <p class="text-xs text-gray-500">Thiền định • 980 điểm</p>
+              </div>
+            </div>
+
+            <!-- Member 3 -->
+            <div class="flex items-center gap-3 p-3 rounded-xl hover:bg-gray-50 transition-all cursor-pointer group">
+              <div class="relative">
+                <img src="https://i.pravatar.cc/150?img=56" class="w-12 h-12 rounded-full object-cover" alt="">
+              </div>
+              <div>
+                <p class="font-semibold text-gray-900 group-hover:text-primary transition-colors">Lê Hoàng Nam</p>
+                <p class="text-xs text-gray-500">Giải tỏa căng thẳng • 856 điểm</p>
+              </div>
+            </div>
+
+            <!-- Member 4 -->
+            <div class="flex items-center gap-3 p-3 rounded-xl hover:bg-gray-50 transition-all cursor-pointer group">
+              <div class="relative">
+                <img src="https://i.pravatar.cc/150?img=32" class="w-12 h-12 rounded-full object-cover" alt="">
+              </div>
+              <div>
+                <p class="font-semibold text-gray-900 group-hover:text-primary transition-colors">Phạm Thị Mai Anh</p>
+                <p class="text-xs text-gray-500">Sách tâm lý • 720 điểm</p>
+              </div>
+            </div>
+
+            <!-- Member 5 -->
+            <div class="flex items-center gap-3 p-3 rounded-xl hover:bg-gray-50 transition-all cursor-pointer group">
+              <div class="relative">
+                <img src="https://i.pravatar.cc/150?img=47" class="w-12 h-12 rounded-full object-cover" alt="">
+              </div>
+              <div>
+                <p class="font-semibold text-gray-900 group-hover:text-primary transition-colors">Đỗ Việt Anh</p>
+                <p class="text-xs text-gray-500">Học cách nói "Không" • 645 điểm</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Achievement Chains Section -->
+      <section class="mb-10">
+        <div class="flex items-center justify-between mb-4">
+          <h2 class="text-xl font-bold text-gray-900 flex items-center gap-2">
+            <i class="ri-gitcommit-line text-primary"></i>
+            Chuỗi thành tựu
+          </h2>
+          <span class="text-sm text-primary font-medium cursor-pointer hover:underline">Xem tất cả</span>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <!-- Chain 1: Self Love -->
+          <div class="bg-white rounded-2xl shadow-sm p-5 card-hover">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-pink-400 to-rose-500 flex items-center justify-center">
+                <i class="ri-heart-fill text-xl text-white"></i>
+              </div>
+              <div>
+                <h3 class="font-bold text-gray-900">Yêu bản thân</h3>
+                <p class="text-xs text-gray-500">3/5 thành tựu</p>
+              </div>
+            </div>
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-1">
+                <div class="w-8 h-8 rounded-full bg-success flex items-center justify-center">
+                  <i class="ri-check-line text-white text-sm"></i>
+                </div>
+                <div class="w-8 h-8 rounded-full bg-success flex items-center justify-center">
+                  <i class="ri-check-line text-white text-sm"></i>
+                </div>
+                <div class="w-8 h-8 rounded-full bg-success flex items-center justify-center">
+                  <i class="ri-check-line text-white text-sm"></i>
+                </div>
+                <div class="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center border-2 border-dashed border-primary">
+                  <i class="ri-pulse-line text-primary text-sm"></i>
+                </div>
+                <div class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center">
+                  <i class="ri-lock-line text-gray-400 text-sm"></i>
+                </div>
+              </div>
+              <span class="text-xs text-primary font-medium">60%</span>
+            </div>
+          </div>
+
+          <!-- Chain 2: Mindfulness -->
+          <div class="bg-white rounded-2xl shadow-sm p-5 card-hover">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-violet-400 to-purple-500 flex items-center justify-center">
+                <i class="ri-bear-smile-fill text-xl text-white"></i>
+              </div>
+              <div>
+                <h3 class="font-bold text-gray-900">Thiền định</h3>
+                <p class="text-xs text-gray-500">5/7 thành tựu</p>
+              </div>
+            </div>
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-1">
+                <div class="w-8 h-8 rounded-full bg-success flex items-center justify-center">
+                  <i class="ri-check-line text-white text-sm"></i>
+                </div>
+                <div class="w-8 h-8 rounded-full bg-success flex items-center justify-center">
+                  <i class="ri-check-line text-white text-sm"></i>
+                </div>
+                <div class="w-8 h-8 rounded-full bg-success flex items-center justify-center">
+                  <i class="ri-check-line text-white text-sm"></i>
+                </div>
+                <div class="w-8 h-8 rounded-full bg-success flex items-center justify-center">
+                  <i class="ri-check-line text-white text-sm"></i>
+                </div>
+                <div class="w-8 h-8 rounded-full bg-success flex items-center justify-center">
+                  <i class="ri-check-line text-white text-sm"></i>
+                </div>
+              </div>
+              <div class="flex items-center gap-1 bg-success/10 px-2 py-1 rounded-full">
+                <i class="ri-vip-diamond-fill text-success text-xs"></i>
+                <span class="text-xs font-bold text-success">Hoàn thành!</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Chain 3: Learning -->
+          <div class="bg-white rounded-2xl shadow-sm p-5 card-hover">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-400 to-indigo-500 flex items-center justify-center">
+                <i class="ri-book-3-fill text-xl text-white"></i>
+              </div>
+              <div>
+                <h3 class="font-bold text-gray-900">Học tập</h3>
+                <p class="text-xs text-gray-500">1/5 thành tựu</p>
+              </div>
+            </div>
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-1">
+                <div class="w-8 h-8 rounded-full bg-success flex items-center justify-center">
+                  <i class="ri-check-line text-white text-sm"></i>
+                </div>
+                <div class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center">
+                  <i class="ri-lock-line text-gray-400 text-sm"></i>
+                </div>
+                <div class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center">
+                  <i class="ri-lock-line text-gray-400 text-sm"></i>
+                </div>
+                <div class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center">
+                  <i class="ri-lock-line text-gray-400 text-sm"></i>
+                </div>
+                <div class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center">
+                  <i class="ri-lock-line text-gray-400 text-sm"></i>
+                </div>
+              </div>
+              <span class="text-xs text-gray-400 font-medium">20%</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Badge Showcase -->
+      <section class="mb-10">
+        <div class="flex items-center justify-between mb-4">
+          <h2 class="text-xl font-bold text-gray-900 flex items-center gap-2">
+            <i class="ri-medal-fill text-warning"></i>
+            Kho huy hiệu của bạn
+          </h2>
+        </div>
+        <div class="bg-white rounded-2xl shadow-sm p-5">
+          <div class="flex flex-wrap gap-4">
+            <!-- Earned Badge 1 -->
+            <div class="flex flex-col items-center p-3 rounded-xl hover:bg-gray-50 transition-all cursor-pointer group">
+              <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-amber-400 to-orange-500 flex items-center justify-center shadow-lg shadow-amber-200 mb-2 group-hover:scale-110 transition-transform">
+                <i class="ri-fire-fill text-2xl text-white"></i>
+              </div>
+              <span class="text-xs font-medium text-gray-700">7 ngày</span>
+            </div>
+            <!-- Earned Badge 2 -->
+            <div class="flex flex-col items-center p-3 rounded-xl hover:bg-gray-50 transition-all cursor-pointer group">
+              <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-emerald-400 to-green-500 flex items-center justify-center shadow-lg shadow-emerald-200 mb-2 group-hover:scale-110 transition-transform">
+                <i class="ri-leaf-fill text-2xl text-white"></i>
+              </div>
+              <span class="text-xs font-medium text-gray-700">Thiên nhiên</span>
+            </div>
+            <!-- Earned Badge 3 -->
+            <div class="flex flex-col items-center p-3 rounded-xl hover:bg-gray-50 transition-all cursor-pointer group">
+              <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-violet-400 to-purple-500 flex items-center justify-center shadow-lg shadow-violet-200 mb-2 group-hover:scale-110 transition-transform">
+                <i class="ri-star-fill text-2xl text-white"></i>
+              </div>
+              <span class="text-xs font-medium text-gray-700">5 sao</span>
+            </div>
+            <!-- In Progress Badge -->
+            <div class="flex flex-col items-center p-3 rounded-xl hover:bg-gray-50 transition-all cursor-pointer group opacity-70">
+              <div class="w-16 h-16 rounded-2xl bg-gray-200 flex items-center justify-center mb-2 relative">
+                <i class="ri-moon-fill text-2xl text-gray-400"></i>
+                <div class="absolute -bottom-1 left-1/2 -translate-x-1/2 bg-primary text-white text-xs px-2 py-0.5 rounded-full">50%</div>
+              </div>
+              <span class="text-xs font-medium text-gray-500">Đang đạt...</span>
+            </div>
+            <!-- Locked Badge -->
+            <div class="flex flex-col items-center p-3 rounded-xl opacity-50">
+              <div class="w-16 h-16 rounded-2xl bg-gray-100 flex items-center justify-center mb-2">
+                <i class="ri-lock-fill text-2xl text-gray-300"></i>
+              </div>
+              <span class="text-xs font-medium text-gray-400">Khóa</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Create Circle CTA -->
+        <div class="bg-gradient-to-br from-primary via-secondary to-accent rounded-2xl p-6 text-white text-center">
+          <div class="w-16 h-16 rounded-2xl bg-white/20 backdrop-blur flex items-center justify-center mx-auto mb-4">
+            <i class="ri-group-line text-3xl"></i>
+          </div>
+          <h3 class="font-bold text-lg mb-2">Tạo Circle của riêng bạn</h3>
+          <p class="text-white/80 text-sm mb-4">Xây dựng cộng đồng và kết nối với những người cùng chí hướng</p>
+          <button onclick="openCreateCircleModal()" class="w-full bg-white text-primary py-3 rounded-xl font-semibold hover:shadow-lg transition-all btn-scale flex items-center justify-center gap-2">
+            <i class="ri-add-circle-line"></i> Tạo Circle
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <!-- Create Circle Modal -->
+    <div id="createCircleModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 hidden p-4">
+      <div class="bg-white rounded-2xl w-full max-w-md shadow-2xl transform transition-all scale-95 overflow-hidden">
+        <!-- Modal Header with Gradient -->
+        <div class="bg-gradient-to-r from-primary via-secondary to-accent p-4 text-white relative overflow-hidden">
+          <div class="absolute top-0 right-0 w-20 h-20 bg-white/10 rounded-full -mr-10 -mt-10"></div>
+          <div class="absolute bottom-0 left-0 w-16 h-16 bg-white/10 rounded-full -ml-8 -mb-8"></div>
+          <div class="relative flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <div class="w-10 h-10 rounded-xl bg-white/20 backdrop-blur flex items-center justify-center">
+                <i class="ri-add-circle-line text-xl"></i>
+              </div>
+              <div>
+                <h3 class="text-lg font-bold">Tạo Circle mới</h3>
+                <p class="text-white/80 text-xs">Tạo cộng đồng cho riêng bạn</p>
+              </div>
+            </div>
+            <button onclick="closeCreateCircleModal()" class="w-8 h-8 rounded-full bg-white/20 backdrop-blur flex items-center justify-center hover:bg-white/30 transition-all">
+              <i class="ri-close-line text-lg"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Modal Body -->
+        <div class="p-4">
+          <form id="createCircleForm" class="space-y-4">
+            <!-- Circle Preview -->
+            <div class="flex flex-col items-center mb-1">
+              <div id="circleIconPreview" class="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center shadow-lg mb-2 transition-all duration-300">
+                <i class="ri-heart-line text-2xl text-white"></i>
+              </div>
+              <p class="text-xs text-gray-500">Xem trước</p>
+            </div>
+
+            <!-- Icon Selection -->
+            <div>
+              <label class="block text-xs font-semibold text-gray-700 mb-2">
+                <i class="ri-palette-line mr-1 text-primary"></i>Chọn màu sắc
+              </label>
+              <div class="grid grid-cols-5 gap-2">
+                <button type="button" class="color-option w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-secondary ring-2 ring-transparent hover:ring-primary transition-all" data-gradient="from-primary to-secondary"></button>
+                <button type="button" class="color-option w-8 h-8 rounded-lg bg-gradient-to-br from-pink-500 to-rose-500 ring-2 ring-transparent hover:ring-pink-500 transition-all" data-gradient="from-pink-500 to-rose-500"></button>
+                <button type="button" class="color-option w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-indigo-500 ring-2 ring-transparent hover:ring-blue-500 transition-all" data-gradient="from-blue-500 to-indigo-500"></button>
+                <button type="button" class="color-option w-8 h-8 rounded-lg bg-gradient-to-br from-green-500 to-emerald-500 ring-2 ring-transparent hover:ring-green-500 transition-all" data-gradient="from-green-500 to-emerald-500"></button>
+                <button type="button" class="color-option w-8 h-8 rounded-lg bg-gradient-to-br from-amber-500 to-orange-500 ring-2 ring-transparent hover:ring-amber-500 transition-all" data-gradient="from-amber-500 to-orange-500"></button>
+                <button type="button" class="color-option w-8 h-8 rounded-lg bg-gradient-to-br from-violet-500 to-purple-500 ring-2 ring-transparent hover:ring-violet-500 transition-all" data-gradient="from-violet-500 to-purple-500"></button>
+                <button type="button" class="color-option w-8 h-8 rounded-lg bg-gradient-to-br from-cyan-500 to-blue-500 ring-2 ring-transparent hover:ring-cyan-500 transition-all" data-gradient="from-cyan-500 to-blue-500"></button>
+                <button type="button" class="color-option w-8 h-8 rounded-lg bg-gradient-to-br from-red-500 to-rose-500 ring-2 ring-transparent hover:ring-red-500 transition-all" data-gradient="from-red-500 to-rose-500"></button>
+                <button type="button" class="color-option w-8 h-8 rounded-lg bg-gradient-to-br from-teal-500 to-emerald-500 ring-2 ring-transparent hover:ring-teal-500 transition-all" data-gradient="from-teal-500 to-emerald-500"></button>
+                <button type="button" class="color-option w-8 h-8 rounded-lg bg-gradient-to-br from-gray-500 to-gray-600 ring-2 ring-transparent hover:ring-gray-500 transition-all" data-gradient="from-gray-500 to-gray-600"></button>
+              </div>
+            </div>
+
+            <!-- Circle Name -->
+            <div>
+              <label for="circleName" class="block text-xs font-semibold text-gray-700 mb-1">
+                <i class="ri-honour-line mr-1 text-primary"></i>Tên Circle
+              </label>
+              <input type="text" id="circleName" placeholder="VD: Yêu bản thân" class="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all text-sm" maxlength="30">
+            </div>
+
+            <!-- Category -->
+            <div>
+              <label class="block text-xs font-semibold text-gray-700 mb-2">
+                <i class="ri-folder-line mr-1 text-primary"></i>Danh mục
+              </label>
+              <div class="flex flex-wrap gap-1">
+                <button type="button" class="category-option px-3 py-1.5 rounded-full border border-gray-200 text-gray-600 text-xs hover:border-primary hover:bg-primary/5 hover:text-primary transition-all flex items-center gap-1">
+                  <i class="ri-heart-pulse-line text-xs"></i> Sức khỏe
+                </button>
+                <button type="button" class="category-option px-3 py-1.5 rounded-full border border-gray-200 text-gray-600 text-xs hover:border-primary hover:bg-primary/5 hover:text-primary transition-all flex items-center gap-1">
+                  <i class="ri-book-open-line text-xs"></i> Học tập
+                </button>
+                <button type="button" class="category-option px-3 py-1.5 rounded-full border border-gray-200 text-gray-600 text-xs hover:border-primary hover:bg-primary/5 hover:text-primary transition-all flex items-center gap-1">
+                  <i class="ri-palette-line text-xs"></i> Sáng tạo
+                </button>
+                <button type="button" class="category-option px-3 py-1.5 rounded-full border border-gray-200 text-gray-600 text-xs hover:border-primary hover:bg-primary/5 hover:text-primary transition-all flex items-center gap-1">
+                  <i class="ri-group-line text-xs"></i> Xã hội
+                </button>
+              </div>
+            </div>
+
+            <!-- Privacy -->
+            <div>
+              <label class="block text-xs font-semibold text-gray-700 mb-2">
+                <i class="ri-shield-check-line mr-1 text-primary"></i>Quyền riêng tư
+              </label>
+              <div class="grid grid-cols-2 gap-2">
+                <label class="privacy-option relative flex flex-col items-center p-3 rounded-xl border border-gray-200 cursor-pointer hover:border-primary/50 transition-all bg-gray-50/50">
+                  <input type="radio" name="privacy" value="public" class="sr-only" checked>
+                  <div class="w-8 h-8 rounded-lg bg-green-100 flex items-center justify-center mb-1">
+                    <i class="ri-earth-line text-sm text-green-600"></i>
+                  </div>
+                  <span class="font-medium text-gray-900 text-xs">Công khai</span>
+                  <div class="privacy-check absolute top-1 right-1 w-4 h-4 rounded-full bg-primary flex items-center justify-center opacity-0 transition-all">
+                    <i class="ri-check-line text-white text-xs"></i>
+                  </div>
+                </label>
+                <label class="privacy-option relative flex flex-col items-center p-3 rounded-xl border border-gray-200 cursor-pointer hover:border-primary/50 transition-all bg-gray-50/50">
+                  <input type="radio" name="privacy" value="private" class="sr-only">
+                  <div class="w-8 h-8 rounded-lg bg-purple-100 flex items-center justify-center mb-1">
+                    <i class="ri-lock-line text-sm text-purple-600"></i>
+                  </div>
+                  <span class="font-medium text-gray-900 text-xs">Riêng tư</span>
+                  <div class="privacy-check absolute top-1 right-1 w-4 h-4 rounded-full bg-primary flex items-center justify-center opacity-0 transition-all">
+                    <i class="ri-check-line text-white text-xs"></i>
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <!-- Submit -->
+            <div class="flex gap-2 pt-2">
+              <button type="button" onclick="closeCreateCircleModal()" class="flex-1 px-3 py-2 border border-gray-200 rounded-lg font-medium text-gray-600 hover:bg-gray-50 transition-all flex items-center justify-center gap-1 text-sm">
+                <i class="ri-close-line"></i> Hủy
+              </button>
+              <button type="submit" class="flex-1 px-3 py-2 bg-gradient-to-r from-primary to-secondary text-white rounded-lg font-medium hover:shadow-lg transition-all flex items-center justify-center gap-1 text-sm btn-scale">
+                <i class="ri-check-line"></i> Tạo Circle
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Category filter functionality
+    document.querySelectorAll('.category-filter').forEach(filter => {
+      filter.addEventListener('click', function() {
+        document.querySelectorAll('.category-filter').forEach(f => {
+          f.classList.remove('active', 'bg-primary', 'text-white');
+          f.classList.add('bg-white', 'text-gray-600', 'border', 'border-gray-200');
+        });
+        this.classList.add('active', 'bg-primary', 'text-white');
+        this.classList.remove('bg-white', 'text-gray-600', 'border', 'border-gray-200');
+      });
+    });
+
+    // Color option selection
+    document.querySelectorAll('.color-option').forEach(option => {
+      option.addEventListener('click', function() {
+        document.querySelectorAll('.color-option').forEach(o => {
+          o.classList.remove('border-primary', 'border-pink-500', 'border-blue-500', 'border-green-500', 'border-amber-500', 'border-violet-500', 'border-cyan-500', 'border-red-500', 'border-teal-500', 'border-indigo-500');
+          o.classList.add('border-transparent');
+        });
+        const color = this.dataset.color;
+        this.classList.remove('border-transparent');
+        this.classList.add('border-primary');
+
+        // Update preview
+        const preview = document.getElementById('circleIconPreview');
+        preview.className = `w-16 h-16 rounded-2xl bg-gradient-to-br ${this.dataset.gradient} flex items-center justify-center shadow-lg`;
+      });
+    });
+
+    // Category option selection
+    document.querySelectorAll('.category-option').forEach(option => {
+      option.addEventListener('click', function() {
+        document.querySelectorAll('.category-option').forEach(o => {
+          o.classList.remove('bg-primary/10', 'text-primary', 'border-primary');
+          o.classList.add('border-gray-200', 'text-gray-600');
+        });
+        this.classList.add('bg-primary/10', 'text-primary', 'border-primary');
+        this.classList.remove('border-gray-200', 'text-gray-600');
+      });
+    });
+
+    // Modal functions
+    function openCreateCircleModal() {
+      document.getElementById('createCircleModal').classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeCreateCircleModal() {
+      document.getElementById('createCircleModal').classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+
+    // Close modal on outside click
+    document.getElementById('createCircleModal').addEventListener('click', function(e) {
+      if (e.target === this) closeCreateCircleModal();
+    });
+
+    // Close on escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeCreateCircleModal();
+    });
+
+    // Form submission
+    document.getElementById('createCircleForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      // Simulate form submission
+      const btn = this.querySelector('button[type="submit"]');
+      const originalText = btn.innerHTML;
+      btn.innerHTML = '<i class="ri-loader-4-line animate-spin"></i> Đang tạo...';
+      btn.disabled = true;
+
+      setTimeout(() => {
+        closeCreateCircleModal();
+        btn.innerHTML = originalText;
+        btn.disabled = false;
+        // Show success toast (simulated)
+        alert('Circle đã được tạo thành công!');
+      }, 1500);
+    });
+
+    // Character counter for inputs
+    document.getElementById('circleName').addEventListener('input', function() {
+      this.nextElementSibling.textContent = `${this.value.length}/50`;
+    });
+
+    document.getElementById('circleDesc').addEventListener('input', function() {
+      this.nextElementSibling.textContent = `${this.value.length}/200`;
+    });
+  </script>
+
+  <!-- Reduced motion support -->
+  <style>
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</body>
+</html>
